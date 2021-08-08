@@ -4,6 +4,7 @@ import 'package:design_course/HomeScreen/categoryListView.dart';
 import 'package:design_course/HomeScreen/popularListView.dart';
 import 'package:design_course/MyClippers/clipPath.dart';
 import 'package:design_course/components/default_button.dart';
+import 'package:design_course/live_stream/liveStreamScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -253,7 +254,24 @@ class _HomeScreenState extends State<HomeScreen> {
                   RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(30),
               ))),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+                context,
+                PageRouteBuilder(
+                  transitionDuration: Duration(milliseconds: 300),
+                  transitionsBuilder:
+                      (context, animation, animationTime, child) {
+                    return ScaleTransition(
+                      scale: animation,
+                      alignment: Alignment.center,
+                      child: child,
+                    );
+                  },
+                  pageBuilder: (context, animation, animationTime) {
+                    return LiveStreamScreen();
+                  },
+                ));
+          },
         ),
       ),
     );

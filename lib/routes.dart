@@ -1,3 +1,4 @@
+import 'package:design_course/live_stream/liveCourseListView.dart';
 import 'package:flutter/widgets.dart';
 
 import 'package:design_course/complete_profile/complete_profile_screen.dart';
@@ -7,6 +8,7 @@ import 'package:design_course/login_success/login_success_screen.dart';
 import 'package:design_course/otp/otp_screen.dart';
 import 'package:design_course/sign_in/sign_in_screen.dart';
 import 'package:design_course/splash/splash_screen.dart';
+import 'live_stream/liveStreamScreen.dart';
 import 'sign_up/sign_up_screen.dart';
 
 // We use name route
@@ -20,4 +22,5 @@ final Map<String, WidgetBuilder> routes = {
   CompleteProfileScreen.routeName: (context) => CompleteProfileScreen(),
   OtpScreen.routeName: (context) => OtpScreen(),
   HomeUi.routeName: (context) => HomeUi(),
+  LiveStreamScreen.routeName: (context) => LiveStreamScreen(),
 };

@@ -1,3 +1,4 @@
+import 'package:design_course/live_stream/liveStreamScreen.dart';
 import 'package:design_course/routes.dart';
 import 'package:design_course/splash/components/splash_content.dart';
 import 'package:design_course/splash/splash_screen.dart';
