@@ -3,7 +3,10 @@ import 'package:design_course/HomeScreen/ButtonDesign/bouncyButton.dart';
 import 'package:design_course/HomeScreen/categoryListView.dart';
 import 'package:design_course/HomeScreen/popularListView.dart';
 import 'package:design_course/MyClippers/clipPath.dart';
+import 'package:design_course/cart/cart_screen.dart';
+import 'package:design_course/components/coustom_bottom_nav_bar.dart';
 import 'package:design_course/components/default_button.dart';
+import 'package:design_course/enums.dart';
 import 'package:design_course/live_stream/liveStreamScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -22,6 +25,9 @@ class HomeUi extends StatelessWidget {
             return Scaffold(
               backgroundColor: AppThemeColors.bgColor,
               body: HomeScreen(),
+              bottomNavigationBar: CustomBottomNavBar(
+                selectedMenu: MenuState.home,
+              ),
             );
           },
         );
@@ -353,10 +359,30 @@ class _HomeScreenState extends State<HomeScreen> {
               alignment: Alignment.topRight,
               child: Padding(
                 padding: const EdgeInsets.all(20),
-                child: Icon(
-                  Icons.shopping_cart_outlined,
-                  color: Colors.orange,
-                  size: 40,
+                child: FlatButton(
+                  child: Icon(
+                    Icons.shopping_cart_outlined,
+                    color: Colors.orange,
+                    size: 40,
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        PageRouteBuilder(
+                          transitionDuration: Duration(milliseconds: 400),
+                          transitionsBuilder:
+                              (context, animation, animationTime, child) {
+                            return ScaleTransition(
+                              scale: animation,
+                              alignment: Alignment.topLeft,
+                              child: child,
+                            );
+                          },
+                          pageBuilder: (context, animation, animationTime) {
+                            return CartScreen();
+                          },
+                        ));
+                  },
                 ),
               ),
             ),

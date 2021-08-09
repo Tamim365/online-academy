@@ -2,6 +2,7 @@ import 'package:design_course/live_stream/liveStreamScreen.dart';
 import 'package:design_course/routes.dart';
 import 'package:design_course/splash/components/splash_content.dart';
 import 'package:design_course/splash/splash_screen.dart';
+import 'package:design_course/theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
     ]);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: theme(),
       initialRoute: HomeUi.routeName,
       routes: routes,
     );

@@ -1,5 +1,6 @@
 import 'package:design_course/AppTheme/appthemeColors.dart';
 import 'package:design_course/MyClippers/clipPath.dart';
+import 'package:design_course/cart/cart_screen.dart';
 import 'package:flutter/material.dart';
 import 'Animations/delayedAnimation.dart';
 import 'Animations/scaleAnimation.dart';
@@ -140,7 +141,24 @@ class _CourseInfoState extends State<CourseInfo> {
                           RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30),
                       ))),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        PageRouteBuilder(
+                          transitionDuration: Duration(milliseconds: 300),
+                          transitionsBuilder:
+                              (context, animation, animationTime, child) {
+                            return ScaleTransition(
+                              scale: animation,
+                              alignment: Alignment.center,
+                              child: child,
+                            );
+                          },
+                          pageBuilder: (context, animation, animationTime) {
+                            return CartScreen();
+                          },
+                        ));
+                  },
                 ),
               ),
             ),

@@ -41,10 +41,11 @@ class _LiveStreamScreenState extends State<LiveStreamScreen>
       // color: Colors.orange,
       child: Scaffold(
         appBar: AppBar(
+            shadowColor: Colors.transparent,
             toolbarHeight: 150,
             leading: BackButton(color: Colors.black), // here the desired height
             flexibleSpace: Container(
-              color: Colors.orange,
+              color: Colors.blue,
               padding: EdgeInsets.only(top: 50),
               child: Column(
                 children: <Widget>[
@@ -75,7 +76,7 @@ class _LiveStreamScreenState extends State<LiveStreamScreen>
               ),
             )),
         body: Container(
-          color: Colors.orange,
+          color: Colors.blue,
           child: Container(
             decoration: BoxDecoration(
               color: Colors.black,

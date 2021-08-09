@@ -1,3 +1,4 @@
+import 'package:design_course/AppTheme/appthemeColors.dart';
 import 'package:flutter/material.dart';
 
 import 'constants.dart';
@@ -37,12 +38,16 @@ TextTheme textTheme() {
 
 AppBarTheme appBarTheme() {
   return AppBarTheme(
-    color: Colors.white,
+    color: AppThemeColors.darkBlue,
     elevation: 0,
     brightness: Brightness.light,
-    iconTheme: IconThemeData(color: Colors.black),
+    iconTheme: IconThemeData(color: kPrimaryColor),
     textTheme: TextTheme(
-      headline6: TextStyle(color: Color(0XFF8B8B8B), fontSize: 18),
+      headline6: TextStyle(
+          color: kPrimaryColor,
+          fontSize: 18,
+          fontFamily: "Muli",
+          fontWeight: FontWeight.bold),
     ),
   );
 }

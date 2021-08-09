@@ -1,4 +1,6 @@
+import 'package:design_course/cart/cart_screen.dart';
 import 'package:design_course/live_stream/liveCourseListView.dart';
+import 'package:design_course/profile/profile_screen.dart';
 import 'package:flutter/widgets.dart';
 
 import 'package:design_course/complete_profile/complete_profile_screen.dart';
@@ -23,4 +25,6 @@ final Map<String, WidgetBuilder> routes = {
   OtpScreen.routeName: (context) => OtpScreen(),
   HomeUi.routeName: (context) => HomeUi(),
   LiveStreamScreen.routeName: (context) => LiveStreamScreen(),
+  CartScreen.routeName: (context) => CartScreen(),
+  ProfileScreen.routeName: (context) => ProfileScreen(),
 };
