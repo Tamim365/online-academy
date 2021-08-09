@@ -1,3 +1,4 @@
+import 'package:design_course/payment/paymentScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:design_course/components/default_button.dart';
@@ -85,7 +86,24 @@ class CheckoutCard extends StatelessWidget {
                   height: 50,
                   child: DefaultButton(
                     text: "Check Out",
-                    press: () {},
+                    press: () {
+                      Navigator.push(
+                          context,
+                          PageRouteBuilder(
+                            transitionDuration: Duration(milliseconds: 300),
+                            transitionsBuilder:
+                                (context, animation, animationTime, child) {
+                              return ScaleTransition(
+                                scale: animation,
+                                alignment: Alignment.bottomCenter,
+                                child: child,
+                              );
+                            },
+                            pageBuilder: (context, animation, animationTime) {
+                              return PaymentScreen();
+                            },
+                          ));
+                    },
                   ),
                 ),
               ],

@@ -1,5 +1,7 @@
 import 'package:design_course/cart/cart_screen.dart';
 import 'package:design_course/live_stream/liveCourseListView.dart';
+import 'package:design_course/payment/paymentScreen.dart';
+import 'package:design_course/payment_success/payment_success_screen.dart';
 import 'package:design_course/profile/profile_screen.dart';
 import 'package:flutter/widgets.dart';
 
@@ -27,4 +29,6 @@ final Map<String, WidgetBuilder> routes = {
   LiveStreamScreen.routeName: (context) => LiveStreamScreen(),
   CartScreen.routeName: (context) => CartScreen(),
   ProfileScreen.routeName: (context) => ProfileScreen(),
+  PaymentScreen.routeName: (context) => PaymentScreen(),
+  PaymentSuccessScreen.routeName: (context) => PaymentSuccessScreen(),
 };

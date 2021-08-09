@@ -1,4 +1,5 @@
 import 'package:design_course/live_stream/liveStreamScreen.dart';
+import 'package:design_course/payment/paymentScreen.dart';
 import 'package:design_course/routes.dart';
 import 'package:design_course/splash/components/splash_content.dart';
 import 'package:design_course/splash/splash_screen.dart';
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: theme(),
-      initialRoute: HomeUi.routeName,
+      initialRoute: SplashScreen.routeName,
       routes: routes,
     );
   }
